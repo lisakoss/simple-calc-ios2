@@ -19,7 +19,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func btnPress(_ sender: UIButton) {
+        
+        if(sender.titleLabel!.text == "0") {
+            print("yay")
+        } else {
+            print("not zero")
+        }
+    }
 }
 
