@@ -39,7 +39,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func operand(_ sender: UIButton) {
-        operand = sender.titleLabel!.text!
+        if(sender.titleLabel!.text! == "MOD") {
+            operand = "%"
+        } else {
+            operand = sender.titleLabel!.text!
+        }
         runningTotal += Double(outputDisplay.text!)!
         displayNumber = ""
     }
@@ -80,6 +84,8 @@ class ViewController: UIViewController {
             outputDisplay.text = String(runningTotal * Double(outputDisplay.text!)!)
         case "÷":
             outputDisplay.text = String(runningTotal / Double(outputDisplay.text!)!)
+        case "%":
+            outputDisplay.text = String(runningTotal.truncatingRemainder(dividingBy: Double(outputDisplay.text!)!))
         case "COUNT":
             outputDisplay.text = String(count + 1)
         case "AVG":

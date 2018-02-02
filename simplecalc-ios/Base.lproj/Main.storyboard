@@ -104,6 +104,9 @@
                                                 <state key="normal" title="MOD">
                                                     <color key="titleColor" red="0.16618766190000001" green="0.16618766190000001" blue="0.16618766190000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVk-wJ-1cg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUh-Q5-zpq">
                                                 <rect key="frame" x="304.66666666666669" y="0.0" width="93.333333333333314" height="79.666666666666671"/>
