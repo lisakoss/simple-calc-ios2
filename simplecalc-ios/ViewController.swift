@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     var operand = ""
     var runningTotal: Double = 0
+    var count: Double = 0
     var displayNumber = ""
     @IBOutlet weak var outputDisplay: UILabel!
     
@@ -34,12 +35,38 @@ class ViewController: UIViewController {
         outputDisplay.text = "0"
         displayNumber = ""
         runningTotal = 0
+        count = 0
     }
-    
     
     @IBAction func operand(_ sender: UIButton) {
         operand = sender.titleLabel!.text!
         runningTotal += Double(outputDisplay.text!)!
+        displayNumber = ""
+    }
+    
+    @IBAction func multiOperand(_ sender: UIButton) {
+        operand = sender.titleLabel!.text!
+        switch operand {
+        case "COUNT":
+            count += 1
+        case "AVG":
+            runningTotal += Double(outputDisplay.text!)!
+            count += 1
+        case "FACT":
+            for number in 0...(Int(outputDisplay.text!)! - 1) {
+                if(runningTotal == 0) {
+                    runningTotal = Double(outputDisplay.text!)! - Double(number)
+                } else {
+                    runningTotal = runningTotal * (Double(outputDisplay.text!)! - Double(number))
+                    print(runningTotal)
+                }
+            }
+            
+            outputDisplay.text = String(runningTotal)
+            print(runningTotal)
+        default:
+            break
+        }
         displayNumber = ""
     }
     
@@ -53,11 +80,16 @@ class ViewController: UIViewController {
             outputDisplay.text = String(runningTotal * Double(outputDisplay.text!)!)
         case "÷":
             outputDisplay.text = String(runningTotal / Double(outputDisplay.text!)!)
+        case "COUNT":
+            outputDisplay.text = String(count + 1)
+        case "AVG":
+            outputDisplay.text = String((runningTotal + Double(outputDisplay.text!)!) / (count + 1))
         default:
             outputDisplay.text = "Error"
         }
         
         runningTotal = 0
+        count = 0
     }
 }
 
