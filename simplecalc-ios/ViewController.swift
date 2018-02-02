@@ -62,12 +62,10 @@ class ViewController: UIViewController {
                     runningTotal = Double(outputDisplay.text!)! - Double(number)
                 } else {
                     runningTotal = runningTotal * (Double(outputDisplay.text!)! - Double(number))
-                    print(runningTotal)
                 }
             }
             
             outputDisplay.text = String(runningTotal)
-            print(runningTotal)
         default:
             break
         }
@@ -75,25 +73,35 @@ class ViewController: UIViewController {
     }
     
     @IBAction func total(_ sender: UIButton) {
+        var total: String = ""
         switch operand {
         case "+":
-            outputDisplay.text = String(runningTotal + Double(outputDisplay.text!)!)
+            total = String(runningTotal + Double(outputDisplay.text!)!)
         case "-":
-            outputDisplay.text = String(runningTotal - Double(outputDisplay.text!)!)
+            total = String(runningTotal - Double(outputDisplay.text!)!)
         case "×":
-            outputDisplay.text = String(runningTotal * Double(outputDisplay.text!)!)
+            total = String(runningTotal * Double(outputDisplay.text!)!) 
         case "÷":
-            outputDisplay.text = String(runningTotal / Double(outputDisplay.text!)!)
+            total = String(runningTotal / Double(outputDisplay.text!)!)
         case "%":
-            outputDisplay.text = String(runningTotal.truncatingRemainder(dividingBy: Double(outputDisplay.text!)!))
+            total = String(runningTotal.truncatingRemainder(dividingBy: Double(outputDisplay.text!)!))
         case "COUNT":
-            outputDisplay.text = String(count + 1)
+            total = String(count + 1)
         case "AVG":
-            outputDisplay.text = String((runningTotal + Double(outputDisplay.text!)!) / (count + 1))
+            total = String((runningTotal + Double(outputDisplay.text!)!) / (count + 1))
         default:
             outputDisplay.text = "Error"
         }
         
+        let index: String.Index = total.index(of: ".")!
+        
+        if(total.hasSuffix(".0")) {
+            outputDisplay.text = String(total[..<index])
+        } else {
+            outputDisplay.text = total
+        }
+        
+        displayNumber = ""
         runningTotal = 0
         count = 0
     }
