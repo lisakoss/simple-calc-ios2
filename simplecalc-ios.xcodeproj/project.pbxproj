@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422A7C9D20269C67006A3BED /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A7C9C20269C67006A3BED /* HistoryViewController.swift */; };
 		42E22F2B202298F300A420CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E22F2A202298F300A420CE /* AppDelegate.swift */; };
 		42E22F2D202298F300A420CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E22F2C202298F300A420CE /* ViewController.swift */; };
 		42E22F30202298F300A420CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E22F2E202298F300A420CE /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		422A7C9C20269C67006A3BED /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		42E22F27202298F300A420CE /* simplecalc-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simplecalc-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E22F2A202298F300A420CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42E22F2C202298F300A420CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				42E22F2A202298F300A420CE /* AppDelegate.swift */,
 				42E22F2C202298F300A420CE /* ViewController.swift */,
 				42E22F2E202298F300A420CE /* Main.storyboard */,
+				422A7C9C20269C67006A3BED /* HistoryViewController.swift */,
 				42E22F31202298F300A420CE /* Assets.xcassets */,
 				42E22F33202298F300A420CE /* LaunchScreen.storyboard */,
 				42E22F36202298F300A420CE /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422A7C9D20269C67006A3BED /* HistoryViewController.swift in Sources */,
 				42E22F2D202298F300A420CE /* ViewController.swift in Sources */,
 				42E22F2B202298F300A420CE /* AppDelegate.swift in Sources */,
 			);
